@@ -56,7 +56,17 @@ namespace ProductReviwe
                 Console.WriteLine("ProductID: " + list.ProductId + "            REVIEW: " + list.Review);
             }
         }
+        public void RetrieveRecordSkipTop5(List<Product> review)
+        {
+            var data = (from AllData in review
+                       where (AllData.ProductId != null)
+                       select AllData).Skip(5);
 
+            foreach (var list in data)
+            {
+                Console.WriteLine("ProductID: " + list.ProductId + "  user id: " + list.UserId + "  REVIEW: " + list.Review + "  rating: " + list.Rating);
+            }
+        }
 
     }
 }

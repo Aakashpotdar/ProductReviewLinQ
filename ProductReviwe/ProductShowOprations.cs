@@ -45,6 +45,18 @@ namespace ProductReviwe
 
         }
 
+        public void RetrieveRecordIdReview(List<Product> review)
+        {
+            var data = from AllData in review
+                       where(AllData.ProductId!=null&&AllData.Review!=null )
+                       select AllData;
+
+            foreach (var list in data)
+            {
+                Console.WriteLine("ProductID: " + list.ProductId + "            REVIEW: " + list.Review);
+            }
+        }
+
 
     }
 }

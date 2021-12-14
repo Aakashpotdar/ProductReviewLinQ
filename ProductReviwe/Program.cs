@@ -26,7 +26,7 @@ namespace ProductReviwe
             productShow.Top3RecordsShow(product);
             productShow.SelectedRecords(product);
             productShow.RetrieveCountOfRecords(product);
-
+            productShow.RetrieveRecordIdReview(product);
         }
     }
 }

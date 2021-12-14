@@ -24,6 +24,9 @@ namespace ProductReviwe
             ProductShowOprations productShow = new ProductShowOprations();
 
             productShow.Top3RecordsShow(product);
+            productShow.SelectedRecords(product);
+            productShow.RetrieveCountOfRecords(product);
+
         }
     }
 }

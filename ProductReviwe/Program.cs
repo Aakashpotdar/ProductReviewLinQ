@@ -24,35 +24,42 @@ namespace ProductReviwe
         };
             ProductShowOprations productShow = new ProductShowOprations();
 
-            productShow.Top3RecordsShow(product);
-            productShow.SelectedRecords(product);
-            productShow.RetrieveCountOfRecords(product);
-            productShow.RetrieveRecordIdReview(product);
-            productShow.RetrieveRecordSkipTop5(product);
+            //productShow.Top3RecordsShow(product);
+            //productShow.SelectedRecords(product);
+            //productShow.RetrieveCountOfRecords(product);
+            //productShow.RetrieveRecordIdReview(product);
+            //productShow.RetrieveRecordSkipTop5(product);
 
 
 
             DataTable table = new DataTable();
 
-            table.Columns.Add("ProductId");
-            table.Columns.Add("UserId");
-            table.Columns.Add("Review");
-            table.Columns.Add("IsLike");
-            table.Columns.Add("Rating");
+            table.Columns.Add("ProductId",typeof(int));
+            table.Columns.Add("UserId", typeof(int));
+            table.Columns.Add("Review", typeof(string));
+            table.Columns.Add("IsLike", typeof(bool));
+            table.Columns.Add("Rating", typeof(int));
 
-            table.Rows.Add("01", "001", "Good", "true", "8");
-            table.Rows.Add("04", "002", "Good", "true", "9");
-            table.Rows.Add("05", "003", "Bad", "false", "3");
-            table.Rows.Add("02", "004", "Good", "true", "7");
-            table.Rows.Add("01", "005", "Good", "true", "6");
-            table.Rows.Add("03", "006", "Good", "false", "2");
-            table.Rows.Add("05", "007", "Good", "false", "5");
-            table.Rows.Add("02", "008", "Good", "true", "8");
+            table.Rows.Add(01, 001, "Nice", true, 8);
+            table.Rows.Add(04, 002, "Nice", true, 9);
+            table.Rows.Add(05, 003, "Bad", false,3);
+            table.Rows.Add(02, 004, "Good", true, 7);
+            table.Rows.Add(01, 005, "Good", true, 6);
+            table.Rows.Add(03, 006, "Good", false,2);
+            table.Rows.Add(05, 007, "Good", false,5);
+            table.Rows.Add(02, 008, "Nice", true, 8);
+            table.Rows.Add(02, 010, "Good", true, 7);
+            table.Rows.Add(01, 010, "Good", true, 6);
+            table.Rows.Add(03, 010, "Bad", false, 2);
+            table.Rows.Add(05, 010, "Bad", false, 5);
+            table.Rows.Add(02, 010, "Nice", true, 8);
 
             DataTableOprations obj = new DataTableOprations();
             obj.RetriveDataIsLikeTrue(table);
-
-
+            Console.WriteLine("-_-_-_-_-_-_-_-_-_-_-_-_-_-_");
+            obj.RetriveDataReviewIsNice(table);
+            Console.WriteLine("-_-_-_-_-_-_-_-_-_-_-_-_-_-_");
+            obj.RetriveDataId10AndOrderByRating(table);
         }
     }
 }

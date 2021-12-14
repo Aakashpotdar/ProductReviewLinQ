@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace ProductReviwe
 {
@@ -28,6 +29,27 @@ namespace ProductReviwe
             productShow.RetrieveCountOfRecords(product);
             productShow.RetrieveRecordIdReview(product);
             productShow.RetrieveRecordSkipTop5(product);
+
+            
+            
+            DataTable table = new DataTable();
+
+            table.Columns.Add("ProductId");
+            table.Columns.Add("UserId");
+            table.Columns.Add("Review");
+            table.Columns.Add("IsLike");
+            table.Columns.Add("Rating");
+
+            table.Rows.Add(01, 001, "Good", true, 8);
+            table.Rows.Add(04, 002, "Good", true, 9);
+            table.Rows.Add(05, 003, "Bad", false, 3);
+            table.Rows.Add(02, 004, "Good", true, 7);
+            table.Rows.Add(01, 005, "Good", true, 6);
+            table.Rows.Add(03, 006, "Good", true, 9);
+            table.Rows.Add(05, 007, "Good", true, 5);
+            table.Rows.Add(01, 008, "Good", true, 8);
+
+
         }
     }
 }
